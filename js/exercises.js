@@ -59,7 +59,7 @@ const modernFilms = films.filter(function(film){
 console.log(modernFilms)
 /*
 5. Uncomment the following code
-a) Make sure you understand what the search() method does. Try changing the value of title and searchTerm to get different messages.
+a) Make sure you understand what the search() method does. Try changing the value of the searchTerm to get different messages.
 b) How could you use the search method in a filter function i.e. it should filter an array of film objects based on whether the film title contains searchTerm. Instead printing a message, the if statement should return true or false, just like the other filter examples.
 */
 
