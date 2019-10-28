@@ -21,7 +21,7 @@ const moduleCode="CHT2531";
 * *var* is used for function scoped variables.
 * *let* is used for block scoped variables.
 * *const* is used for a variable that won't change.
-*
+
 The idea of scope relates to where the variable can be seen or used. See https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var for an in-depth discussion.
 
 As a general rule:
@@ -94,9 +94,9 @@ The if statement is used to test values
 ```javascript
 const name="Matthew";
 if(name === "Matthew"){
-   console.log(`Welcome ${name}`);
+  console.log(`Welcome ${name}`);
 }else{
- 	console.log(`Welcome user`);
+  console.log(`Welcome user`);
 }
 ```
 Conditional Operators allow us to test in different ways:
@@ -151,7 +151,7 @@ for(let i=1;i<=10;i++){
 * An array is a special type of variable that can store multiple pieces of data.
 * We can think of an array as being a bit like a list of information.
 * Each item in the list is numbered so it can be distinguished from the others.
-*
+
 ```javascript
 const shopping = ["Tea","Bread","Milk","Cheese","Flour"];
 console.log(shopping[0]); //Tea
@@ -166,7 +166,7 @@ like.push("Strawberry");
 like.push("Chocolate");
 console.log(like); // Array ["Vanilla", "Strawberry", "Chocolate"]
 ```
-### looping over arrays
+### Looping over arrays
 
 #### forEach Loop
 Typically we will use a forEach loop to efficiently loop over an array's values. The following example will display each country in turn:
@@ -259,7 +259,7 @@ We can store any type of data as an object property (even other objects). This e
 const employee={
     name:"Jane",
     wage:8,
-  	onCall:["Monday","Wednesday","Thursday"],
+    onCall:["Monday","Wednesday","Thursday"],
     calcWeeklyWage:function(hours){
         return hours*this.wage
     }
@@ -397,7 +397,7 @@ function printStudent(student){
     console.log(`course:${student.course}`);
     console.log(`mark:${student.mark}`);
 }
-const someStudent={name:"Jane",course:"IT", mark:67}
+const someStudent={name:"Jane",course:"IT", mark:67};
 printStudent(someStudent);
 ```
 Output
@@ -498,13 +498,16 @@ function getPassingStudents(studentsArr){
   })
   return passingStudents;
 }
+
 const students=[
   {name:"Jane",course:"IT", mark:67},
   {name:"Imran",course:"BACB", mark:82},
   {name:"Pete",course:"BACB", mark:38},
   {name:"Zofia",course:"Web Design", mark:72}
 ];
+
 const studentsThatPassed = getPassingStudents(students);
+
 studentsThatPassed.forEach(function(student){
     console.log(`${student.name} has passed.`);
   })
