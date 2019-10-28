@@ -327,29 +327,29 @@ France
 ## Functions
 
 ### Basic Function Syntax
-A function is simply a block of code we give a name to, in this example *printDetails*
+A function is simply a block of code we give a name to, in this example *showMessage*
 ```javascript
-function printDetails(){
+function showMessage(){
     console.log("printing some details")
 }
 ```
 ### Calling Functions
 To run the code in a function we simply write the function name and some parentheses (curved brackets()).
 ```javascript
-function printDetails(){
+function showMessage(){
     console.log("printing some details")
 }
-printDetails(); //runs the function
+showMessage(); //runs the function
 ```
 ### Function Arguments and Parameters
 Arguments allow us to pass data into a function. In this example
 * "Jane" is an argument
 * *name* is a parameter
 ```javascript
-function printDetails(name){
+function showMessage(name){
     console.log(`name - ${name}`)
 }
-printDetails("Jane");
+showMessage("Jane");
 ```
 Outputs
 ```
@@ -359,11 +359,11 @@ name - Jane
 ### Multiple Arguments
 We can specify multiple arguments by separating them with a comma
 ```javascript
-function printDetails(name, course){
+function showMessage(name, course){
     console.log(`name - ${name}`);
   	console.log(`course - ${course}`);
 }
-printDetails("Jane","IT");
+showMessage("Jane","IT");
 ```
 Outputs
 ```
