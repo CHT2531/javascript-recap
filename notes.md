@@ -1,5 +1,4 @@
 # JavaScript Recap
-The following is based on the ES2015 (ES6) version of JavaScript.
 
 ## Data and Variables
 
