@@ -5,7 +5,7 @@
 const username = "Fred";
 const colour = "red";
 const url="http://www.hud.ac.uk";
-console.log(`Hi ${username}. Your favourite colour is ${colour}. Your favourite website is ${url}`)
+
 /*
 2. Have a look at the following variables
 a) Create a third variable, name it total. total should be assigned a value that is the sum of num1 and num2. Using these variables and a console.log() output the value of total e.g. '10 + 20 = 30'
@@ -13,10 +13,7 @@ b) Create another variable, call it average. average should be assigned a value 
 */
 const num1=10;
 const num2=20;
-const total = num1 + num2;
-console.log(`${num1} + ${num2} = ${total}`)
-const average = (num1 + num2)/2;
-console.log(`The mean average of ${num1} and ${num2} is ${average}`)
+
 /*
 3. The following code declares an object.
 a) Using this object, a template literal, and a console.log(). Write a line of code that outputs 'The film Jaws was released in 1975'.
@@ -28,7 +25,7 @@ const filmObj = {
   year:1975,
   duration:124
 }
-console.log(`The film ${filmObj.title} was released in ${filmObj.year}.`)
+
 /*
 4. The following code declares an array of objects.
 a) Using this array, write a line of code that outputs 'The film Jaws was released in 1975' to the console.
@@ -43,27 +40,13 @@ const films=[
   {title:"Winter's Bone", year:2010, duration:100},
   {title:"The Incredibles", year:2004, duration:115},
 ]
-console.log(`The film ${films[0].title} was released in ${films[0].year}.`)
 
-films.forEach(function(film){
-  console.log(`The film ${film.title} was released in ${film.year}.`)
-})
-
-const modernFilms = films.filter(function(film){
-  if(film.year>=2000){
-    return true;
-  }else{
-    return false;
-  }
-})
-console.log(modernFilms)
 /*
 5. Uncomment the following code
-a) Make sure you understand what the search() method does. Try changing the value of title and searchTerm to get different messages.
+a) Make sure you understand what the search() method does. Try changing the value of the searchTerm to get different messages.
 b) How could you use the search method in a filter function i.e. it should filter an array of film objects based on whether the film title contains searchTerm. Instead printing a message, the if statement should return true or false, just like the other filter examples.
 */
-
-
+/*
 let searchTerm = "i";
 console.log(filmObj.title.search(searchTerm)) //outputs 1, the search term is found at the second character in the string
 if(filmObj.title.search(searchTerm)>-1){
@@ -71,15 +54,7 @@ if(filmObj.title.search(searchTerm)>-1){
 }else{
   console.log(`The search term ${searchTerm} was not found in ${filmObj.title}`);
 }
-
-const matchingFilms = films.filter(function(film){
-  if(film.title.search(searchTerm)>-1){
-    return true;
-  }else{
-    return false;
-  }
-})
-console.log(matchingFilms)
+*/
 
 /*
 6. Look at the following code that delcares a function
@@ -89,29 +64,6 @@ a) Write a line of code that will call this function so that the console.log mes
 function printDetails(){
   console.log(`Jaws was released in 1975. It is 124 minutes long. `)
 }
-// printDetails();
-
-// function printDetails(title){
-//   console.log(`${title} was released in 1975. It is 124 minutes long. `)
-// }
-// printDetails("Jaws");
-
-// function printDetails(title, year, duration){
-//   console.log(`${title} was released in ${year}. It is ${duration} minutes long. `)
-// }
-// printDetails("Jaws",1975,124);
-
-// function printDetails(film){
-//   console.log(`${film.title} was released in ${film.year}. It is ${film.duration} minutes long. `)
-// }
-// printDetails(filmObj);
-
-// function printDetails(films){
-//   films.forEach(function(film){
-//     console.log(`${film.title} was released in ${film.year}. It is ${film.duration} minutes long. `);
-//   })
-// }
-// printDetails(films);
 
 /*
 7. The following all relate to the function you have just created
@@ -136,15 +88,9 @@ The function should test the year property of the object and return true if the 
 The code beneath will test your function i.e. you should get a message  of 'It's not a 21st century film' (assuming filmObj is the one we declared for Q3.
 */
 
-
-// function is21stCentury(filmObj){
-//   //add your code in here
-// }
+/*
 function is21stCentury(filmObj){
-  if(filmObj.year>=2000){
-    return true;
-  }
-  return false;
+  //add your code in here
 }
 
 //test for the function
@@ -153,50 +99,32 @@ if(is21stCentury(filmObj)){
 }else{
   console.log("It's not a 21st century film.");
 }
-
+*/
 
 /*
 Have a look at the following code. It calls a function getLongFilms. getLongFilms should accept an array of films. This array of films should be filtered to remove films shorter than 120 minutes in length. The filtered array of films should be returned. If you do this correctly the code that follows will print out the titles of the matching films. Again this assumes we are using the array of films created as part of Q4.
 */
 
-
-// function getLongFilms(films){
-//   //add your code in here
-// }
+/*
 function getLongFilms(films){
-  const matchingFilms = films.filter(function(film){
-    if(film.duration>=120){
-      return true;
-    }
-    return false;
-  })
-  return matchingFilms;
+  //add your code in here
 }
+
 const longFilms = getLongFilms(films);
 console.log("Here are all the films that are longer than 2 hours in length:")
 longFilms.forEach(function(film){
     console.log(`${film.title}`);
   })
-
+*/
 
 
 /*
 Have a look at the following code. It calls a function searchFilms. A seatch term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. if you do this correctly, the code that follows will print out the matching films details
 */
 
-
-// function searchFilms(searchTerm,films){
-//   //add your code in here
-// }
+/*
 function searchFilms(searchTerm,films){
-  const matchingFilms = films.filter(function(film){
-    if(film.title.search(searchTerm)>-1){
-      return true;
-    }else{
-      return false;
-    }
-  })
-  return matchingFilms;
+  //add your code in here
 }
 
 searchTerm = "in"
@@ -205,3 +133,4 @@ console.log("Here are all the films that match the search term ${searchTerm}:")
 searchResults.forEach(function(film){
     console.log(`${film.title}`);
 })
+*/
