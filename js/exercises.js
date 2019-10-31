@@ -47,7 +47,7 @@ a) Make sure you understand what the search() method does. Try changing the valu
 b) How could you use the search method in a filter function i.e. it should filter an array of film objects based on whether the film title contains searchTerm. Instead printing a message, the if statement should return true or false, just like the other filter examples.
 */
 /*
-let searchTerm = "i";
+let searchTerm = "a";
 console.log(filmObj.title.search(searchTerm)) //outputs 1, the search term is found at the second character in the string
 if(filmObj.title.search(searchTerm)>-1){
   console.log(`The search term '${searchTerm}' was found in ${filmObj.title}`);
@@ -119,7 +119,7 @@ longFilms.forEach(function(film){
 
 
 /*
-Have a look at the following code. It calls a function searchFilms. A seatch term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. if you do this correctly, the code that follows will print out the matching films details
+Have a look at the following code. It calls a function searchFilms. A search term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. if you do this correctly, the code that follows will print out the matching films details
 */
 
 /*
