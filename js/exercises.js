@@ -181,7 +181,7 @@ longFilms.forEach(function(film){
 
 
 /*
-Have a look at the following code. It calls a function searchFilms. A seatch term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. if you do this correctly, the code that follows will print out the matching films details
+Have a look at the following code. It calls a function searchFilms. A search term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. if you do this correctly, the code that follows will print out the matching films details
 */
 
 
