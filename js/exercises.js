@@ -85,7 +85,7 @@ d) Instead of passing a single object can you pass an array of film objects. Aga
 /*
 Uncomment the following code. This function accepts a single argument, a film object.
 The function should test the year property of the object and return true if the film was made in the 21st century and false if it wasn't.
-The code beneath will test your function i.e. you should get a message  of 'It's not a 21st century film' (assuming filmObj is the one we declared for Q3.
+The code beneath will test your function i.e. you should get a message  of 'It's not a 21st century film' (assuming filmObj is the one we declared for Q3).
 */
 
 /*
