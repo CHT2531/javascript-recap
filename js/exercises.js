@@ -6,6 +6,7 @@ const username = "Fred";
 const colour = "red";
 const url="http://www.hud.ac.uk";
 
+console.log(`Hello ${username}.`)
 /*
 2. Have a look at the following variables
 a) Create a third variable, name it total. total should be assigned a value that is the sum of num1 and num2. Using these variables and a console.log() output the value of total e.g. '10 + 20 = 30'
