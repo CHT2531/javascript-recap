@@ -213,7 +213,7 @@ function searchFilms(searchTerm,films){
 
 searchTerm = "in"
 const searchResults = searchFilms(searchTerm,films);
-console.log("Here are all the films that match the search term ${searchTerm}:")
+console.log(`Here are all the films that match the search term '${searchTerm}':`)
 searchResults.forEach(function(film){
     console.log(`${film.title}`);
 })
