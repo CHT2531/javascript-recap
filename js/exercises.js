@@ -31,7 +31,7 @@ const filmObj = {
 4. The following code declares an array of objects.
 a) Using this array, write a line of code that outputs 'The film Jaws was released in 1975' to the console.
 b) Add another film to the array. Use a console.log statement to output the details of the new film.
-c) Use a forEach lop to output the details of each film in turn.
+c) Use a forEach loop to output the details of each film in turn.
 d) Use a filter to get all the films made in the 21st century.
 */
 
