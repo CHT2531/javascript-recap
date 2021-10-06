@@ -339,7 +339,7 @@ To run the code in a function we simply write the function name and some parenth
 function showMessage(){
     console.log("printing some details")
 }
-showMessage(); //runs the function
+showMessage(); //outputs 'printing some details'
 ```
 ### Function Arguments and Parameters
 Arguments allow us to pass data into a function. In this example
@@ -349,7 +349,7 @@ Arguments allow us to pass data into a function. In this example
 function showMessage(name){
     console.log(`name - ${name}`)
 }
-showMessage("Jane");
+showMessage("Jane"); 
 ```
 Outputs
 ```
