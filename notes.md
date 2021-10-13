@@ -209,7 +209,7 @@ BRAZIL
 PAKISTAN
 ```
 #### filter
-The filter method is used to create a new array that only consists of the elements that pass a test. Here's an example:
+The filter method is used to create a new array that only features the elements that pass a test. Here's an example:
 
 ```javascript
 const stuScores=[45,66,34,89,21,65,45];
