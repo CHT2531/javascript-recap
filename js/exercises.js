@@ -1,17 +1,19 @@
 
 /*
-1. Using these variables and a console.log() statement output the message 'Hi Fred. Your favourite colour is red. Your favourite website is http://www.hud.ac.uk. Make sure you use a template literal.
+1. Using these variables and a console.log() statement output the message 'Hi Fred. Your favourite colour is red. Your favourite website is http://www.hud.ac.uk'. Make sure you use a template literal.
 */
 const username = "Fred";
 const colour = "red";
 const url="http://www.hud.ac.uk";
 
 console.log(`Hello ${username}.`)
+
 /*
 2. Have a look at the following variables
 a) Create a third variable, name it total. total should be assigned a value that is the sum of num1 and num2. Using these variables and a console.log() output the value of total e.g. '10 + 20 = 30'
 b) Create another variable, call it average. average should be assigned a value that is the mean average of num1 and $num. Again, use a console.log statement to output the value of average.
 */
+
 const num1=10;
 const num2=20;
 
@@ -44,9 +46,10 @@ const films=[
 
 /*
 5. Uncomment the following code
-a) Make sure you understand what the search() method does. Try changing the value of the searchTerm to get different messages.
+a) First, try and understand what the search() method does. Try changing the value of the variable searchTerm to get different messages.
 b) How could you use the search method in a filter function i.e. it should filter an array of film objects based on whether the film title contains searchTerm. Instead printing a message, the if statement should return true or false, just like the other filter examples.
 */
+
 /*
 let searchTerm = "a";
 console.log(filmObj.title.search(searchTerm)) //outputs 1, the search term is found at the second character in the string
@@ -58,7 +61,7 @@ if(filmObj.title.search(searchTerm)>-1){
 */
 
 /*
-6. Look at the following code that delcares a function
+6. Look at the following code that declares a function
 a) Write a line of code that will call this function so that the console.log message is displayed
 */
 
@@ -104,7 +107,7 @@ if(is21stCentury(filmObj)){
 */
 
 /*
-Have a look at the following code. It calls a function getLongFilms. getLongFilms should accept an array of films. This array of films should be filtered to remove films shorter than 120 minutes in length. The filtered array of films should be returned. If you do this correctly, the code that follows will print out the titles of the matching films. Again this assumes we are using the array of films created as part of Q4.
+Have a look at the following code. It calls a function getLongFilms(). getLongFilms() should accept an array of films. This array of films should be filtered to remove films shorter than 120 minutes in length. The filtered array of films should be returned. If you do this correctly, the code that follows will print out the titles of the matching films. Again this assumes we are using the array of films created as part of Q4.
 */
 
 /*
@@ -121,7 +124,7 @@ longFilms.forEach(function(film){
 
 
 /*
-Have a look at the following code. It calls a function searchFilms. A search term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. If you do this correctly, the code that follows will print out the matching films' details
+Have a look at the following code. It calls a function searchFilms(). A search term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. If you do this correctly, the code that follows will print out the matching films' details
 */
 
 /*
