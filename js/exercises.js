@@ -67,11 +67,13 @@ const modernFilms = films.filter(function(film){
     return false;
   }
 })
-console.log(modernFilms)
+modernFilms.forEach(function(film){
+  console.log(`The film ${film.title} was released in ${film.year}.`)
+})
 
 /*
 5. Uncomment the following code
-a) Make sure you understand what the search() method does. Try changing the value of the searchTerm to get different messages.
+a) First, try to understand what the search() method does. Try changing the value of the searchTerm to get different messages.
 b) How could you use the search method in a filter function i.e. it should filter an array of film objects based on whether the film title contains searchTerm. Instead printing a message, the if statement should return true or false, just like the other filter examples.
 */
 
@@ -92,7 +94,9 @@ const matchingFilms = films.filter(function(film){
     return false;
   }
 })
-console.log(matchingFilms)
+matchingFilms.forEach(function(film){
+  console.log(`The film ${film.title} was released in ${film.year}.`)
+})
 
 /*
 6. Look at the following code that declares a function
