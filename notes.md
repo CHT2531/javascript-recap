@@ -517,3 +517,27 @@ Jane has passed.
 Imran has passed.
 Zofia has passed.
 ```
+
+## Different ways of writing functions (function expressions)
+The example from above can be re-written as a *function expression*.
+
+```javascript
+const showMessage = function(name){
+    console.log(`name - ${name}`)
+}
+```
+
+This function is anonymous i.e. it doesn't have a name. Instead it is assigned to a variable and can be called by referring to the variable.
+
+```javascript
+showMessage("Jane"); //outputs name - Jane
+```
+
+## Different ways of writing functions (arrow functions)
+Recent versions of JavaScript also support the use of arrow functions. The example from above can be re-written as an *arrow function*.
+
+```javascript
+const showMessage = (name) =>  console.log(`name - ${name}`)
+```
+
+Arrow functions provide a shorter more concise syntax. 
