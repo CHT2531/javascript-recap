@@ -38,7 +38,7 @@ b) How could you use the search method in a filter function i.e. it should filte
 /*
 let searchTerm = "a";
 console.log(filmObj.title.search(searchTerm)) //outputs 1, the search term is found at the second character in the string
-if(filmObj.title.search(searchTerm)>-1){
+if(filmObj.title.search(searchTerm) > -1){
   console.log(`The search term '${searchTerm}' was found in ${filmObj.title}`);
 }else{
   console.log(`The search term ${searchTerm} was not found in ${filmObj.title}`);
