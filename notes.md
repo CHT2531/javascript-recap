@@ -237,41 +237,23 @@ The output will be
 An object is simply a collection of variables (we call these properties) and functions (we call these methods) that we group together. Here's an example:
 ```javascript
 const employee={
-    name:"Jane",
-    wage:8,
-    calcWeeklyWage:function(hours){
-        return hours*this.wage
-    }
+    name: "Jane",
+    wage: 8,
+    payBonus: true,
+    dept: "Marketing"
 }
 ```
-To work with an object we use dot-notation syntax, *objectName.property* or *objectName.method()*. Here are some examples:
+To work with an object we use dot-notation syntax, *objectName.property*. Here are some examples:
 
 ```javascript
 console.log(`${employee.name} earns ${employee.wage} an hour.`); //Jane earns 8 pounds an hour.
-console.log(`This week ${employee.name} earned £${employee.calcWeeklyWage(40)}.`); // This week Jane earned £320.
-```
-Note the use of the keyword *this* in the *calWeeklyWage()* function. It simply means look in the object for the wage value.
+console.log(`${employee.name} works in ${employee.dept}.`); //Jane works in Marketing.
 
-We can store any type of data as an object property (even other objects). This example adds an *onCall* property that uses an array.
-
-```javascript
-const employee={
-    name:"Jane",
-    wage:8,
-    onCall:["Monday","Wednesday","Thursday"],
-    calcWeeklyWage:function(hours){
-        return hours*this.wage
-    }
+if(employee.payBonus === true){
+	console.log(`${employee.name} gets a bonus.`); //Jane gets a bonus.
 }
-console.log(`The first day ${employee.name} is on call is ${employee.onCall[0]}.`); // The first day Jane is on call is Monday.
 ```
 
-## Using Objects
-Objects really have two uses:-
-1. Storing data
-2. Structuring and organising code. This requires a good understanding of topics such as factory functions, prototypes, inheritance, classes etc.
-
-We will largely focus on (1) in this module. If you plan on using a JavaScript framework e.g. Angular, React, or plan on doing more JavaScript when you graduate it would be worth exploring (2).
 
 ## Objects and Arrays
 We often store a collection of objects in an array. Here's an example:
