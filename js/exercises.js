@@ -1,223 +1,190 @@
+//Q1. Have a look at the following object literal.
+const flight = {
+    flightNumber: 2131,
+    date: "2023-04-10",
+    airline: {
+        code: "FR",
+        name: "Ryanair"
+    },
+    departure: {
+        code: "MAN",
+        name: "Manchester"
+    },
+    arrival: {
+        code: "ACE",
+        name: "Lanzarote"
+    }
+}
 
-/*
-1. Using these variables and a console.log() statement output the message 'Hi Fred. Your favourite colour is red. Your favourite website is http://www.hud.ac.uk. Make sure you use a template literal.
-*/
-const username = "Fred";
-const colour = "red";
-const url="http://www.hud.ac.uk";
-console.log(`Hi ${username}. Your favourite colour is ${colour}. Your favourite website is ${url}`)
-/*
-2. Have a look at the following variables
-a) Create a third variable, name it total. total should be assigned a value that is the sum of num1 and num2. Using these variables and a console.log() output the value of total e.g. '10 + 20 = 30'
-b) Create another variable, call it average. average should be assigned a value that is the mean average of num1 and $num. Again, use a console.log statement to output the value of average.
-*/
-const num1=10;
-const num2=20;
-const total = num1 + num2;
-console.log(`${num1} + ${num2} = ${total}`)
-const average = (num1 + num2)/2;
-console.log(`The mean average of ${num1} and ${num2} is ${average}`)
-/*
-3. The following code declares an object.
-a) Using this object, a template literal, and a console.log(). Write a line of code that outputs 'The film Jaws was released in 1975'.
-b) Write an if statement that will test if the film's duration is longer than 2hrs (120 minutes). If it is, a console.log() should simply output 'over 2 hours'.
-*/
+// Using this object literal, write console.log statements that will
+// a) Output the flightNumber.
+console.log(flight.flightNumber);
+// b) Output the date. 
+console.log(flight.date);
+// c) Output the name of the arrival airport.
+console.log(flight.arrival.name);
+// d) Output the sentence 'Flight 2131 to Lanzarote will be departing from Manchester on 2023-04-10'
+console.log(`Flight ${flight.flightNumber} to ${flight.arrival.name} will be departing from ${flight.departure.name} on ${flight.date}`);
+
+
+//Q2. Have a look at the following arrays of objects. 
+//These flight objects have exactly the same properties as in Q1, I've just removed the spacing and line breaks.
+
+const flights = [
+    {flightNumber: 2131, date:"2023-04-10", airline: {code: "FR", name: "Ryanair"}, departure:{code: "MAN", name: "Manchester"}, arrival:{code: "ACE",name: "Lanzarote"}},
+    {flightNumber: 318,date: "2023-03-05",airline: {code: "AF",name: "Air France"},departure:{code: "MAN",name: "Manchester"},arrival:{code: "CDG",name: "Paris"}},
+    {flightNumber: 217,date: "2023-02-12", airline: {code: "LS",name: "Jet2"},departure:{code: "LBA",name: "Leeds"},arrival:{code: "MAH",name: "Menorca"}}
+]
+
+//Using this array,, write console.log statements that will
+//a) Using a forEach loop output the flight numbers i.e.
+// 2131
+// 318
+// 217
+flights.forEach(function(flight){
+    console.log(flight.flightNumber);
+})
+//b) Output the airline code, flight number, date and airline name for each flight i.e.
+// FR 2131 2023-04-10 Ryanair
+// AF 318 2023-03-05 Air France
+// LS 217 2023-02-12 Jet2
+flights.forEach(function(flight){
+    console.log(`${flight.airline.code} ${flight.flightNumber} ${flight.date} ${flight.airline.name}`);
+})
+//c) Can you filter out the flights that depart from Manchester. Use a forEach to display these filtered flights.
+const manchesterFlights = flights.filter(function(flight){
+    if(flight.departure.name === "Manchester"){
+        return true;
+    }
+    return false;
+})
+console.log('Here are the Manchester flights');
+manchesterFlights.forEach(function(flight){
+    console.log(flight.flightNumber);
+});
+
+//Q3. Have a look at the following object literal. 
 
 const filmObj = {
-  title:"Jaws",
-  year:1975,
-  duration:124
-}
-console.log(`The film ${filmObj.title} was released in ${filmObj.year}.`)
-if(filmObj.duration > 120){
-  console.log("Over 2 hours");
-}
-
-/*
-4. The following code declares an array of objects.
-a) Using this array, write a line of code that outputs 'The film Jaws was released in 1975' to the console.
-b) Add another film to the array. Use a console.log statement to output the details of the new film.
-c) Use a forEach loop to output each films details in turn.
-d) Use a filter to get all the films made in the 21st century.
-*/
-
-const films=[
-  {title:"Jaws", year:1975, duration:124},
-  {title:"Get Out", year:2017, duration:117},
-  {title:"Winter's Bone", year:2010, duration:100},
-  {title:"The Incredibles", year:2004, duration:115},
-  {title:"Parasite", year:2019, duration:134},
-]
-//a
-console.log(`The film ${films[0].title} was released in ${films[0].year}.`)
-
-//b
-console.log(`The film ${films[4].title} was released in ${films[4].year}.`);
-
-//c
-films.forEach(function(film){
-  console.log(`The film ${film.title} was released in ${film.year}.`)
-})
-
-//d
-const modernFilms = films.filter(function(film){
-  if(film.year>=2000){
-    return true;
-  }else{
-    return false;
-  }
-})
-modernFilms.forEach(function(film){
-  console.log(`The film ${film.title} was released in ${film.year}.`)
-})
-
-/*
-5. Uncomment the following code
-a) First, try to understand what the search() method does. Try changing the value of the searchTerm to get different messages.
-b) How could you use the search method in a filter function i.e. it should filter an array of film objects based on whether the film title contains searchTerm. Instead printing a message, the if statement should return true or false, just like the other filter examples.
-*/
-
-//a
-let searchTerm = "i";
-console.log(filmObj.title.search(searchTerm)) //outputs 1, the search term is found at the second character in the string
-if(filmObj.title.search(searchTerm)>-1){
-  console.log(`The search term '${searchTerm}' was found in ${filmObj.title}`);
-}else{
-  console.log(`The search term ${searchTerm} was not found in ${filmObj.title}`);
-}
-
-//b
-const matchingFilms = films.filter(function(film){
-  if(film.title.search(searchTerm)>-1){
-    return true;
-  }else{
-    return false;
-  }
-})
-matchingFilms.forEach(function(film){
-  console.log(`The film ${film.title} was released in ${film.year}.`)
-})
-
-/*
-6. Look at the following code that declares a function
-a) Write a line of code that will call this function so that the console.log message is displayed
-*/
-
-//a
-// function printDetails(){
-//   console.log(`Jaws was released in 1975. It is 124 minutes long. `)
-// }
-// printDetails();
-
-/*
-7. The following all relate to the function you have just created
-a) Modify the function so that you can pass an argument for the title of the film. The function call will then look like the following:
-
-printDetails("Jaws"); //calls the printDetails function passing a single argument.
-*/
-
-//7a
-// function printDetails(title){
-//   console.log(`${title} was released in 1975. It is 124 minutes long. `)
-// }
-// printDetails("Jaws");
-
-/*
-b) Modify the function again so that you can also pass arguments for the year and duration.
-*/
-
-//7b
-// function printDetails(title, year, duration){
-//   console.log(`${title} was released in ${year}. It is ${duration} minutes long. `)
-// }
-// printDetails("Jaws",1975,124);
-
-/*
-c) Instead of passing separate values for title, year and duration, can you pass a film object. The function call will look like the following:
-
-printDetails(filmObj); //calls the printDetails function passing the film object we created earlier (Q3) as an argument.
-*/
-
-//7c
-// function printDetails(film){
-//   console.log(`${film.title} was released in ${film.year}. It is ${film.duration} minutes long. `)
-// }
-// printDetails(filmObj);
-
-/*
-d) Instead of passing a single object can you pass an array of film objects. Again we can use the array we declared earlier as part of Q4.
-*/
-
-//7d
-// function printDetails(films){
-//   films.forEach(function(film){
-//     console.log(`${film.title} was released in ${film.year}. It is ${film.duration} minutes long. `);
-//   })
-// }
-// printDetails(films);
-
-
-
-/*
-Uncomment the following code. This function accepts a single argument, a film object.
-The function should test the year property of the object and return true if the film was made in the 21st century and false if it wasn't.
-The code beneath will test your function i.e. you should get a message  of 'It's not a 21st century film' (assuming filmObj is the one we declared for Q3.
-*/
-
-function is21stCentury(filmObj){
-  if(filmObj.year>=2000){
-    return true;
-  }
-  return false;
-}
-
-//test for the function
-if(is21stCentury(filmObj)){
-  console.log("It's a 21st century film.");
-}else{
-  console.log("It's not a 21st century film.");
-}
-
-
-/*
-Have a look at the following code. It calls a function getLongFilms. getLongFilms should accept an array of films. This array of films should be filtered to remove films shorter than 120 minutes in length. The filtered array of films should be returned. If you do this correctly the code that follows will print out the titles of the matching films. Again this assumes we are using the array of films created as part of Q4.
-*/
-
-function getLongFilms(films){
-  const matchingFilms = films.filter(function(film){
-    if(film.duration>=120){
-      return true;
+    title: "Jaws",
+    year: 1975,
+    duration: 128,
+    genres:["drama","thriller"],
+    cast: [
+        {
+            actor: "Roy Scheider",
+            character: "Chief Martin Brody"
+        },
+        {
+            actor: "Robert Shaw",
+            character: "Quint"
+        },
+        {
+            actor: "Lorraine Gary",
+            character: "Ellen Brody"
+        }
+    ],
+    getAge: function(){
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        return currentYear - this.year;
     }
-    return false;
-  })
-  return matchingFilms;
 }
-const longFilms = getLongFilms(films);
-console.log("Here are all the films that are longer than 2 hours in length:")
-longFilms.forEach(function(film){
-    console.log(`${film.title}`);
+
+// Using this object literal, write console.log statements that will
+// a) Output the title of the film.
+console.log(filmObj.title);
+// b) Output the sentence 'The film Jaws was released in 1975'.
+console.log(`The film ${filmObj.title} was released in ${filmObj.year}`); 
+// c) Using a forEach loop, output the genres of the film.
+filmObj.genres.forEach(function(genre){
+    console.log(genre);
+})
+// d) Output the name of the actor that plays Ellen Brody.
+console.log(filmObj.cast[2].actor);
+// e) Output the age of the film (you will  need to call the getAge() method).
+console.log(filmObj.getAge())
+// f) Using a forEach loop output the entire cast.
+filmObj.cast.forEach(function(castMember){
+    console.log(`${castMember.character} was played by ${castMember.actor}`);
 })
 
-
-
-/*
-Have a look at the following code. It calls a function searchFilms. A search term and an array of film objects are passed as arguments.  Add code in the searchFilms function that will filter the films using the search term and return an array of matching films. If you do this correctly, the code that follows will print out the matching films details
-*/
-
-function searchFilms(searchTerm,films){
-  const matchingFilms = films.filter(function(film){
-    if(film.title.search(searchTerm)>-1){
-      return true;
-    }else{
-      return false;
+//Q4. Create an object literal to represent a cake. 
+//The object should have properties for type (a string), layers (a number), and ingredients (an array of strings). 
+// Assign the newly created object to a variable named myCake. 
+const myCake = {
+    type: "Sponge",
+    layers: 2,
+    ingredients: ["flour","sugar","butter","eggs"],
+    bake: function(){
+        return `The ${this.type} cake is baking`;
     }
-  })
-  return matchingFilms;
+}
+// Uncomment the following code to tests this works.
+console.log(myCake.type) // e.g. Sponge
+console.log(myCake.layers) // e.g. 2 
+console.log(myCake.ingredients) // e.g. ["flour","sugar","butter","eggs"]
+
+//Q5. Add a bake()  method to the object. bake() should return a string using the type value. 
+// Again, here's some code to tests it works.
+console.log(myCake.bake()) // e.g. The sponge cake is baking.
+
+//Q6. Create a factory function that will create instances of cake objects. 
+//The factory function should be named cake, it should accept three arguments and return a cake object. 
+// const cakePrototype = {
+//     bake: function(){
+//         return `The ${this.type} cake is baking`;
+//     }
+// }
+// function cakeFactory(type, layers, ingredients)
+// {
+//     const newCake = new Object(cakePrototype);
+//     newCake.type = type;
+//     newCake.layers = layers;
+//     newCake.ingredients = ingredients;
+//     return newCake;
+// }
+// Again, uncomment the following to test your code
+// const chocCake = cakeFactory("Chocolate", 3, ["flour", "sugar", "chocolate", "eggs"]);
+// const fruitCake = cakeFactory("Fruit", 2, ["flour", "sugar", "sultanas", "eggs"]);
+// console.log(chocCake.bake()); // The Chocolate cake is baking. 
+// console.log(`The ${fruitCake.type} has ${fruitCake.layers} layers.`); // The Fruit cake has 2 layers.
+
+//Q7. Comment out the previous code. 
+// Re-write this program to use a constructor function. Here are the tests:
+
+// function Cake(type, layers, ingredients)
+// {
+//     this.layers = layers;
+//     this.ingredients = ingredients;
+//     this.type = type;
+    
+// }
+// Cake.prototype.bake = function(){
+//     return `The ${this.type} cake is baking`;
+// }
+// const chocCake = new Cake("Chocolate", 3, ["flour", "sugar", "chocolate", "eggs"]);
+// const fruitCake = new Cake("Fruit", 2, ["flour", "sugar", "sultanas", "eggs"]);
+// console.log(fruitCake.bake()); // The Fruit cake is baking. 
+// console.log(`The ${chocCake.type} has ${chocCake.layers} layers.`); // The Chocolate cake has 3 layers.
+
+//Q8. Comment out the previous code.
+// Re-write the program to use ES2015 classes
+// You can use the same tests as in Q7
+
+class Cake{
+    constructor(type, layers, ingredients)
+    {
+        this.layers = layers;
+        this.ingredients = ingredients;
+        this.type = type;
+    }
+    bake(){
+        return `The ${this.type} cake is baking`;
+    }
 }
 
-searchTerm = "in"
-const searchResults = searchFilms(searchTerm,films);
-console.log(`Here are all the films that match the search term '${searchTerm}':`)
-searchResults.forEach(function(film){
-    console.log(`${film.title}`);
-})
+const chocCake = new Cake("Chocolate", 3, ["flour", "sugar", "chocolate", "eggs"]);
+const fruitCake = new Cake("Fruit", 2, ["flour", "sugar", "sultanas", "eggs"]);
+console.log(fruitCake.bake()); // The Fruit cake is baking. 
+console.log(`The ${chocCake.type} has ${chocCake.layers} layers.`); // The Chocolate cake has 3 layers.
